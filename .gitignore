@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+lib/
+bin/
+pyvenv.cfg
+
+# Data
+data/raw/
+data/processed/
+data/
+*.csv
+
+# Models
+models/
+*.pkl
+*.pt
+*.bin
+*.onnx
+
+# HuggingFace / Torch cache
+.cache/
+hf_cache/
+
+# OS
+.DS_Store
