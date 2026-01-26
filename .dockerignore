@@ -1,0 +1,11 @@
+# Ignore EVERYTHING by default
+**
+
+# Allow only what we need
+!requirements.txt
+!Dockerfile
+!src/
+!src/api/
+!src/models/
+!models/
+!models/distilbert/
