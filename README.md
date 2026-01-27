@@ -31,7 +31,7 @@ This project follows a production-style, containerized architecture.
 
 ## Project demo screenshot
 
-![Customer Sentiment Analyzer](project_screenshots/assets:demo_screenshot.png)
+![Customer Sentiment Analyzer](project_screenshots/demo_screenshot.png)
 
 
 ### Components
@@ -62,9 +62,19 @@ This project follows a production-style, containerized architecture.
 
 ```bash
 git clone https://github.com/RaphSmart/customer-insights 
+```
 cd customer-insights
-docker compose up --build
-Then open:
-Streamlit UI: http://localhost:8501
-FastAPI API docs: http://localhost:8000/docs
+```bash
+docker compose up --build 
+```
+Then open:Streamlit UI
+```bash 
+http://localhost:8501
+```
+FastAPI API docs: 
+```bash 
+http://localhost:8000/docs
+```
+To stop docker-compose
+```bash 
 Stop docker compose down
