@@ -21,10 +21,6 @@ See `/src` for implementation and `/docs` for documentation.
 This project follows a production-style, containerized architecture.
 
 
-
-## Status
-🚧 In progress — actively developing
-
 ## Model Performance
 
 | Model                     | F1 Score | Notes |
@@ -33,9 +29,9 @@ This project follows a production-style, containerized architecture.
 | DistilBERT (fine-tuned)   | 0.896    | 2 epochs, Hugging Face Transformers |
 
 
-## Project demo
+## Project demo screenshot
 
-![Customer Sentiment Analyzer](assets/demo_screenshot.png)
+![Customer Sentiment Analyzer](project_screenshots/assets:demo_screenshot.png)
 
 
 ### Components
@@ -55,4 +51,20 @@ This project follows a production-style, containerized architecture.
   - Internal networking
   - Environment-based configuration
 
-This setup mirrors real-world ML deployment patterns used in industry.
+
+## How to Run Locally (Docker)
+
+### Prerequisites
+- Docker Desktop
+- Git
+
+### Steps
+
+```bash
+git clone https://github.com/RaphSmart/customer-insights 
+cd customer-insights
+docker compose up --build
+Then open:
+Streamlit UI: http://localhost:8501
+FastAPI API docs: http://localhost:8000/docs
+Stop docker compose down
