@@ -24,6 +24,11 @@ def predict_sentiment(request: SentimentRequest):
     return {"results": results}
 
 
-@app.get("/")
+@app.get("/health")
 def health_check():
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "model": "distilbert-sentiment",
+        "service": "customer-insights-api"
+    }
+

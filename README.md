@@ -17,6 +17,11 @@ This is an End-to-end NLP system that trains, serves, and deploys a sentiment an
 ## Project structure
 See `/src` for implementation and `/docs` for documentation.
 
+## Architecture
+This project follows a production-style, containerized architecture.
+
+
+
 ## Status
 🚧 In progress — actively developing
 
@@ -32,8 +37,22 @@ See `/src` for implementation and `/docs` for documentation.
 
 ![Customer Sentiment Analyzer](assets/demo_screenshot.png)
 
-This application demonstrates an end-to-end AI system:
-- Fine-tuned DistilBERT sentiment model
-- FastAPI inference service
-- Streamlit UI
-- Docker + Docker Compose deployment
+
+### Components
+
+- **Streamlit UI**
+  - Collects user input
+  - Sends requests to backend API
+  - Displays predictions and probabilities
+
+- **FastAPI Backend**
+  - Loads trained DistilBERT model
+  - Performs inference
+  - Exposes REST endpoints (`/predict`, `/health`)
+
+- **Docker & Docker Compose**
+  - Isolated services
+  - Internal networking
+  - Environment-based configuration
+
+This setup mirrors real-world ML deployment patterns used in industry.
