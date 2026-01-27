@@ -1,16 +1,18 @@
-# customer-insights
-End-to-end machine learning project demonstrating:
-- data pipelines
-- model training
-- model serving (API)
-- basic MLOps practices
+# Project Title
+Customer Insights – End-to-End NLP Sentiment Analysis System
+
+## What this project does
+
+This is an End-to-end NLP system that trains, serves, and deploys a sentiment analysis model using DistilBERT. It includes data preprocessing, model training, evaluation, FastAPI inference API, and Dockerized deployment and Streamlit UI.
 
 ## Tech stack
-- Python
+- Python 3.10
 - PyTorch + Hugging Face
+- Scikit-learn
 - FastAPI
-- Docker (later)
-- MLflow (later)
+- Docker 
+- MLflow 
+
 
 ## Project structure
 See `/src` for implementation and `/docs` for documentation.
@@ -26,5 +28,12 @@ See `/src` for implementation and `/docs` for documentation.
 | DistilBERT (fine-tuned)   | 0.896    | 2 epochs, Hugging Face Transformers |
 
 
-# Project demo
-A live demo built with Streamlit is included in this project.
+## Project demo
+
+![Customer Sentiment Analyzer](assets/demo_screenshot.png)
+
+This application demonstrates an end-to-end AI system:
+- Fine-tuned DistilBERT sentiment model
+- FastAPI inference service
+- Streamlit UI
+- Docker + Docker Compose deployment

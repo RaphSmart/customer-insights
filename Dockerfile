@@ -1,27 +1,37 @@
+# Base image: slim Python
 FROM python:3.10-slim
 
+# Set working directory
 WORKDIR /app
 
-# System deps
+# System dependencies for PyTorch & ML
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+        build-essential \
+        curl \
+        git \
+        && rm -rf /var/lib/apt/lists/*
 
-# ---- CRITICAL: CPU-only torch FIRST ----
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir \
-    torch==2.1.2+cpu \
-    --index-url https://download.pytorch.org/whl/cpu
+# Upgrade pip
+RUN pip install --upgrade pip
 
-# Install app deps (torch already satisfied)
+# Install PyTorch + NumPy <2 + CPU packages
+RUN pip install --no-cache-dir \
+        torch==2.2.0+cpu \
+        torchvision==0.17.0+cpu \
+        torchaudio==2.2.0+cpu \
+        "numpy<2" \
+        -f https://download.pytorch.org/whl/cpu/torch_stable.html
+
+# Copy requirements and install other dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy ONLY inference code + model
-COPY src/api ./src/api
-COPY src/models ./src/models
+# Copy only the necessary source code
+COPY src/ ./src
 COPY models/distilbert ./models/distilbert
 
-EXPOSE 8000
+# Expose API port
+EXPOSE 8080
 
-CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Set default command
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8080"]
