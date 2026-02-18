@@ -20,6 +20,8 @@ See `/src` for implementation and `/docs` for documentation.
 ## Architecture
 This project follows a production-style, containerized architecture.
 
+## Data
+Amazon reviews dataset (text + label)
 
 ## Model Performance
 
