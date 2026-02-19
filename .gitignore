@@ -1,38 +1,10 @@
-# Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 .venv/
 venv/
 env/
-lib/
-bin/
-pyvenv.cfg
-
-# Data
+.git
+.gitignore
+Dockerfile
+models/distilbert/
 data/
-*.csv
-
-
-# Models
-models/
-*.pkl
-*.pt
-*.bin
-*.onnx
-*.safetensors
-
-# HuggingFace cache
-.cache/
-hf_cache/
-~/.cache/huggingface/
-
-# Environment variables
-.env
-
-# OS
-.DS_Store
-
-# Jupyter
-.ipynb_checkpoints/
