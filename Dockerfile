@@ -28,7 +28,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy only the necessary source code
 COPY src/ ./src
-COPY models/distilbert ./models/distilbert
+# COPY models/distilbert ./models/distilbert
 
 # Expose API port
 EXPOSE 8080
