@@ -8,3 +8,14 @@ env/
 Dockerfile
 models/distilbert/
 data/
+
+# Models
+models/
+*.pkl
+*.pt
+*.bin
+*.onnx
+
+# Allow source code models
+!src/models/
+!src/models/**
