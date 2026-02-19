@@ -8,6 +8,8 @@ env/
 Dockerfile
 models/distilbert/
 data/
+.DS_Store
+.cfg
 
 # Models
 models/
