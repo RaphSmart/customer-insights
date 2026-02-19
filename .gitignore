@@ -1,22 +1,26 @@
-__pycache__/
-*.pyc
+# Ignore virtual environments
 .venv/
 venv/
 env/
-.git
-.gitignore
-Dockerfile
-models/distilbert/
-data/
-.DS_Store
-.cfg
+bin/
+lib/
+pyvenv.cfg
 
-# Models
+# Ignore trained model weights
 models/
-*.pkl
 *.pt
 *.bin
 *.onnx
+*.pkl
+*.safetensors
+
+# Ignore cache
+__pycache__/
+*.pyc
+.DS_Store
+
+# Ignore data
+data/
 
 # Allow source code models
 !src/models/
